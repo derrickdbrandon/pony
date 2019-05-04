@@ -1,5 +1,5 @@
 # Project Name #
-
+DOT PONY
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
 
@@ -17,28 +17,29 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  A single page app that contains artist info, upcoming shows, and a media player for DOT PONY.
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+  Anyone interested in staying updated on DOT PONY releases and shows or those looking for an introduction to the artist.
+  
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
+  Discover music by DOT PONY and stay updated on upcoming shows and releases.
+  
 ## Problem ##
-  > Describe the problem your product solves.
-
+  Currently, DOT PONY has no central location to stay updated with.
+  
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
-
+  This app provides an appealing single page experience for discovering music and staying updated on shows/releases.
+  
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
-
+  We want this app to facilitate discovery of music and provide a place for people to stay updated on the project.
+  
 ## How to Get Started ##
-  > Describe how easy it is to get started.
-
+  The page provides all info on one page, feel free to use the audio player or read info about upcoming events/releases.
+  
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+  
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  
