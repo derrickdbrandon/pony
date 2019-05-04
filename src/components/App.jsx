@@ -6,9 +6,13 @@ import Contact from './Contact.jsx';
 
 const App = () => {
   return (
-    <Header/>
-    <MusicPlayer/>
-    <Shows/>
-    <Contact/>
+    <div>
+      <Header/>
+      <MusicPlayer/>
+      <Shows/>
+      <Contact/>
+    </div>
   );
 };
+
+export default App;
