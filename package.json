@@ -15,6 +15,7 @@
     "react-soundplayer": "^1.0.4"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "eslint": "^5.16.0",
