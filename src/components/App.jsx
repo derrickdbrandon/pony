@@ -6,12 +6,7 @@ import Contact from './Contact.jsx';
 
 const App = () => {
   return (
-    <div>
       <Header/>
-      <MusicPlayer/>
-      <Shows/>
-      <Contact/>
-    </div>
   );
 };
 
