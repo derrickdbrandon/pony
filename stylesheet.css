@@ -4,3 +4,27 @@
 .title {
   font-family: Helvetica, Arial, sans-serif;
 }
+
+.link {
+  padding-right: 5px;
+}
+
+.soundcloud {
+  padding-bottom: 5px;
+}
+
+.instagram {
+  padding-bottom: 3px;
+}
+
+.twitter {
+  padding-bottom: 7px;
+}
+
+.nts {
+  padding-bottom: 6px;
+}
+
+.email {
+  padding-bottom: 9px;
+}
