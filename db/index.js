@@ -46,11 +46,11 @@ const addShow = (date, venue, callback) => {
     venue,
   });
 
-  show.save((err) => {
+  show.save((err, book) => {
     if (err) {
       callback(err, null);
     } else {
-      callback(null);
+      callback(null, book);
     }
   });
 };

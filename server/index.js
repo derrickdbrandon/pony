@@ -50,13 +50,30 @@ app.put('/shows', (req, res) => {
   })
 });
 
-// app.post('/shows', (req, res) => {
+app.post('/shows', (req, res) => {
+  const date = req.body.date;
+  const venue = req.body.venue;
 
-// });
+  db.addShow(date, venue, (err, book) => {
+    if (err) {
+      console.error(err);
+    } else {
+      res.status(200).send(book);
+    }
+  });
+});
 
-// app.delete('/shows', (req, res) => {
+app.delete('/shows', (req, res) => {
+  const date = req.body.date;
 
-// });
+  db.deleteShow(date, (err, success) => {
+    if (err) {
+      console.error(err);
+    } else {
+      res.send(success);
+    }
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
