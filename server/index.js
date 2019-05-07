@@ -65,7 +65,6 @@ app.post('/shows', (req, res) => {
 
 app.delete('/shows', (req, res) => {
   const date = req.body.date;
-
   db.deleteShow(date, (err, success) => {
     if (err) {
       console.error(err);
