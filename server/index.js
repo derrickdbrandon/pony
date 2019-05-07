@@ -21,10 +21,27 @@ app.get('/songs', (req, res) => {
     if (err) {
       console.error(err);
     } else {
-      res.send(songs);
+      console.log(songs);
+      res.jsonp(songs);
     }
   });
 });
+
+// app.get('/shows', (req, res) => {
+
+// });
+
+// app.put('/shows', (req, res) => {
+
+// });
+
+// app.post('/shows', (req, res) => {
+
+// });
+
+// app.delete('/shows', (req, res) => {
+
+// });
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
