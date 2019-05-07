@@ -1,8 +1,13 @@
 * {
   background-color: #E8D0A9;
 }
+
+audio {
+  width: 500px;
+}
 .title {
   font-family: Helvetica, Arial, sans-serif;
+  margin-bottom: 0;
 }
 
 .link {
@@ -27,4 +32,25 @@
 
 .email {
   padding-bottom: 9px;
+}
+
+.player {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.songTitle {
+  font-family: Helvetica, Arial, sans-serif;
+  text-shadow:lightcyan -1px 2px;
+}
+
+.songTitle:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.showList {
+  font-family: Helvetica, Arial, sans-serif;
 }
