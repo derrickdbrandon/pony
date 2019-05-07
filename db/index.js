@@ -37,7 +37,7 @@ const getShows = (callback) => {
 };
 
 const deleteShow = (date, callback) => {
-  Show.find({ date }).remove(callback);
+  Show.deleteOne(date, callback);
 };
 
 const addShow = (date, venue, callback) => {
