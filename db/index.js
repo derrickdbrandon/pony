@@ -7,10 +7,17 @@ const songSchema = mongoose.Schema({
   url: String,
 });
 
+const showSchema = mongoose.Schema({
+  date: String,
+  venue: String,
+});
+
+const Show = mongoose.model('show', showSchema);
+
 const Song = mongoose.model('song', songSchema);
 
 const getSongs = (callback) => {
-  Song.find().exec((err, songs) => {
+  Song.find({}).exec((err, songs) => {
     if (err) {
       callback(err);
     } else {
@@ -19,6 +26,43 @@ const getSongs = (callback) => {
   });
 };
 
+const getShows = (callback) => {
+  Show.find({}).exec((err, shows) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, shows);
+    }
+  });
+};
+
+const deleteShow = (date, callback) => {
+  Show.find({ date }).remove(callback);
+};
+
+const addShow = (date, venue, callback) => {
+  const show = new Show({
+    date,
+    venue,
+  });
+
+  show.save((err) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null);
+    }
+  });
+};
+
+const updateShowVenue = (date, venue, callback) => {
+  Show.findOneAndUpdate({ date }, { venue }, callback);
+};
+
 module.exports = {
   getSongs,
+  getShows,
+  addShow,
+  updateShowVenue,
+  deleteShow,
 };
