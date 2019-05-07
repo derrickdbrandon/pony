@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const bodyParser = require('body-parser');
 
-const Song = require('../db/index.js');
+const db = require('../db/index.js');
 
 const app = express();
 const PORT = 3000;
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 app.get('/songs', (req, res) => {
-  Song.getSongs((err, songs) => {
+  db.getSongs((err, songs) => {
     if (err) {
       console.error(err);
     } else {
@@ -27,9 +27,15 @@ app.get('/songs', (req, res) => {
   });
 });
 
-// app.get('/shows', (req, res) => {
-
-// });
+app.get('/shows', (req, res) => {
+  db.getShows((err, shows) => {
+    if (err) {
+      console.error(err);
+    } else {
+      res.send(shows);
+    }
+  });
+});
 
 // app.put('/shows', (req, res) => {
 
