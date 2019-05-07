@@ -37,9 +37,18 @@ app.get('/shows', (req, res) => {
   });
 });
 
-// app.put('/shows', (req, res) => {
+app.put('/shows', (req, res) => {
+  const date = req.body.date;
+  const venue = req.body.venue;
 
-// });
+  db.updateShowVenue(date, venue, (err, success) => {
+    if (err) {
+      console.error(err)
+    } else {
+      res.status(200).send(success);
+    }
+  })
+});
 
 // app.post('/shows', (req, res) => {
 
