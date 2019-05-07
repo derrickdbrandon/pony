@@ -1,30 +1,98 @@
 import React from 'react';
+import axios from 'axios';
 
 class Shows extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      shows: [
+        {
+          "_id" : 'ObjectId("5cd0f55a0195920dafc3edf3")',
+          "date" : "06/7/2019",
+          "venue" : "Elsewhere"
+        },
+      ],
+      date: '',
+      venue: '',
+    };
+
+    this.getShows = this.getShows.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.addShow = this.addShow.bind(this);
+    this.deleteShow = this.deleteShow.bind(this);
+    this.updateShow = this.updateShow.bind(this);
+  }
+
+  componentDidMount() {
+    this.getShows();
+  }
+
+  getShows() {
+    axios.get('http://localhost:3000/shows').then(response => response.data).then((shows) => {
+      this.setState({
+        shows,
+      });
+    });
+  }
+
+  handleInputChange(e) {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  addShow(e) {
+    e.preventDefault();
+    const date = this.state.date;
+    const venue = this.state.venue;
+
+    axios.post('http://localhost:3000/shows', {date, venue}).then((response) => console.log(response));
+    this.getShows();
+  }
+
+  deleteShow(e) {
+    e.preventDefault();
+    axios.delete('http://localhost:3000/shows', {});
+    this.getShows();
+  }
+
+  updateShow(e) {
+    e.preventDefault();
+    const date = this.state.date;
+    const venue = this.state.venue;
+    axios.put('http://localhost:3000/shows', {date, venue});
+    this.getShows();
   }
 
   render() {
     return (
       <div className="showList">
       <h1>SHOWS</h1>
-      <p>6/7/2019 Trans Pecos</p><br/>
-      <p>7/7/2019 Elsewhere</p><br/>
-      <p>8/12/2019 Everybody Hits</p><br/>
+      {this.state.shows.map((show) => {
+        return (
+          <div><p>{show.date} {show.venue}</p><br/></div>
+        );
+      })}
       <form>
         <label>
           date:
-          <input type="text" name="date" />
+          <input type="text" name="date" onChange={this.handleInputChange}/>
         </label>
         <label>
           venue:
-          <input type="text" name="venue" />
+          <input type="text" name="venue" onChange={this.handleInputChange}/>
         </label>
-        <button>add show</button>
+        <button onClick={this.addShow}>add show</button>
+        <button onClick={this.deleteShow}>delete show</button>
+        <button onClick={this.updateShow}>update show</button>
       </form>
       </div>
-    )
+    );
   }
 }
 
