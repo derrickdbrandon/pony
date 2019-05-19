@@ -44,7 +44,7 @@ class MusicPlayer extends React.Component {
   render() {
     return (
       <div className="player">
-        <Audio title={this.state.currentSong.title} currentSong={this.state.currentSong} />
+        <Audio title={this.state.currentSong.title} src={this.state.currentSong} />
         {this.state.songs.map((song) => {
           return <p onClick={this.handleClick} className="songTitle" value={JSON.stringify(song)}>{song.title}</p>;
         })}
