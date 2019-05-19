@@ -10,7 +10,7 @@ class Audio extends React.Component {
       <div>
       <h1 className="songTitle">{this.props.title}</h1>
       <audio controls>
-        <source src={this.props.currentSong.url} type="audio/wav"/>
+        <source src={this.props.src.url} type="audio/wav"/>
       </audio>
       </div>
     );
