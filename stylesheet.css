@@ -5,6 +5,19 @@
 audio {
   width: 500px;
 }
+
+p {
+  margin: 0%;
+}
+
+label {
+  padding-right: 10px;
+}
+
+button {
+  padding-right: 10px;
+}
+
 .title {
   font-family: Helvetica, Arial, sans-serif;
   margin-top: 0;

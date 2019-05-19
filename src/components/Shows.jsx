@@ -6,13 +6,7 @@ class Shows extends React.Component {
     super(props);
 
     this.state = {
-      shows: [
-        {
-          "_id" : 'ObjectId("5cd0f55a0195920dafc3edf3")',
-          "date" : "06/7/2019",
-          "venue" : "Elsewhere"
-        },
-      ],
+      shows: [],
       date: '',
       venue: '',
     };
