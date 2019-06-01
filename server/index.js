@@ -37,22 +37,20 @@ app.get('/shows', (req, res) => {
   });
 });
 
-app.put('/shows', (req, res) => {
-  const date = req.body.date;
-  const venue = req.body.venue;
+app.put('/shows', ({ body }, res) => {
+  const { date, venue } = body;
 
   db.updateShowVenue(date, venue, (err, success) => {
     if (err) {
-      console.error(err)
+      console.error(err);
     } else {
       res.status(200).send(success);
     }
   })
 });
 
-app.post('/shows', (req, res) => {
-  const date = req.body.date;
-  const venue = req.body.venue;
+app.post('/shows', ({ body }, res) => {
+  const { venue, date } = body;
 
   db.addShow(date, venue, (err, book) => {
     if (err) {
@@ -63,8 +61,8 @@ app.post('/shows', (req, res) => {
   });
 });
 
-app.delete('/shows', (req, res) => {
-  const date = req.body.date;
+app.delete('/shows', ({ body }, res) => {
+  const { date } = body;
   db.deleteShow(date, (err, success) => {
     if (err) {
       console.error(err);
