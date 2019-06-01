@@ -19,10 +19,9 @@ app.use(bodyParser.urlencoded());
 app.get('/songs', (req, res) => {
   db.getSongs((err, songs) => {
     if (err) {
-      console.error(err);
+      res.status(500).send(err);
     } else {
-      console.log(songs);
-      res.jsonp(songs);
+      res.status(200).jsonp(songs);
     }
   });
 });
@@ -30,9 +29,9 @@ app.get('/songs', (req, res) => {
 app.get('/shows', (req, res) => {
   db.getShows((err, shows) => {
     if (err) {
-      console.error(err);
+      res.status(500).send(err);
     } else {
-      res.send(shows);
+      res.status(200).send(shows);
     }
   });
 });
@@ -42,11 +41,11 @@ app.put('/shows', ({ body }, res) => {
 
   db.updateShowVenue(date, venue, (err, success) => {
     if (err) {
-      console.error(err);
+      res.status(500).send(err);
     } else {
       res.status(200).send(success);
     }
-  })
+  });
 });
 
 app.post('/shows', ({ body }, res) => {
@@ -54,7 +53,7 @@ app.post('/shows', ({ body }, res) => {
 
   db.addShow(date, venue, (err, book) => {
     if (err) {
-      console.error(err);
+      res.status(500).send(err);
     } else {
       res.status(200).send(book);
     }
@@ -65,7 +64,7 @@ app.delete('/shows', ({ body }, res) => {
   const { date } = body;
   db.deleteShow(date, (err, success) => {
     if (err) {
-      console.error(err);
+      res.status(500).send(err);
     } else {
       res.send(success);
     }
