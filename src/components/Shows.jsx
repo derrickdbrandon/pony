@@ -31,9 +31,8 @@ class Shows extends React.Component {
   }
 
   handleInputChange(e) {
-    const target = e.target;
-    const value = target.value;
-    const name = target.name;
+    const { target } = e;
+    const { value, name } = target;
 
     this.setState({
       [name]: value,
@@ -42,10 +41,9 @@ class Shows extends React.Component {
 
   addShow(e) {
     e.preventDefault();
-    const date = this.state.date;
-    const venue = this.state.venue;
+    const { date, venue } = this.state;
 
-    axios.post('http://localhost:3000/shows', {date, venue}).then((response) => console.log(response));
+    axios.post('http://localhost:3000/shows', { date, venue }).then(response => console.log(response));
     this.getShows();
   }
 
@@ -57,9 +55,8 @@ class Shows extends React.Component {
 
   updateShow(e) {
     e.preventDefault();
-    const date = this.state.date;
-    const venue = this.state.venue;
-    axios.put('http://localhost:3000/shows', {date, venue});
+    const { date, venue } = this.state;
+    axios.put('http://localhost:3000/shows', { date, venue });
     this.getShows();
   }
 
