@@ -26,7 +26,6 @@ class MusicPlayer extends React.Component {
 
   componentDidMount() {
     axios.get('http://localhost:3000/songs').then(response => response.data).then((songs) => {
-      console.log(songs);
       this.setState({
         songs,
       });
@@ -34,7 +33,7 @@ class MusicPlayer extends React.Component {
   }
 
   handleClick(e) {
-    let song = e.target.getAttribute('value');
+    const song = e.target.getAttribute('value');
 
     this.setState({
       currentSong: JSON.parse(song),
