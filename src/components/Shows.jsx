@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+// this component was simply to add CRUD functionality and isn't rendered in the actual app
+
 class Shows extends React.Component {
   constructor(props) {
     super(props);
