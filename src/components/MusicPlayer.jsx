@@ -49,7 +49,7 @@ class MusicPlayer extends React.Component {
         })}
       </div>
     );
-  };
-};
+  }
+}
 
 export default MusicPlayer;
