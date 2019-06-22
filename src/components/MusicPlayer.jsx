@@ -9,16 +9,21 @@ class MusicPlayer extends React.Component {
     this.state = {
       songs: [
         {
+          _id: '5cd083ee0195920dafc3edf0',
+          title: 'wip',
+          url: 'https://s3.us-east-2.amazonaws.com/dotponyassets/expression.wav',
+        },
+        {
           _id: '5cd074750195920dafc3edee',
           title: 'a (instrumental)',
-          url: 'https://s3.us-east-2.amazonaws.com/dotponyassets/01+a+(Instrumental).wav'
-        }
+          url: 'https://s3.us-east-2.amazonaws.com/dotponyassets/01+a+(Instrumental).wav',
+        },
       ],
       currentSong: {
-        _id: '5cd074750195920dafc3edee',
-        title: 'a (instrumental)',
-        url: 'https://s3.us-east-2.amazonaws.com/dotponyassets/01+a+(Instrumental).wav'
-      }
+        _id: '5cd083ee0195920dafc3edf0',
+        title: 'wip',
+        url: 'https://s3.us-east-2.amazonaws.com/dotponyassets/expression.wav',
+      },
     };
 
     this.handleClick = this.handleClick.bind(this);
